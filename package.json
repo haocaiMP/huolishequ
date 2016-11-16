@@ -1,0 +1,21 @@
+{
+  "name": "huolishequ",
+  "version": "1.0.0",
+  "description": "* 进入项目\r      ```\r      cd program\r      ```\r * 安装\r     `npm install` `cnpm install`\r * 启动\r     `node server.js` \r * 访问\r    ` http://127.0.0.1:9798/views/index.html` 页面访问接口",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^2.0.0"
+  }
+}

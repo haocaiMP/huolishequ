@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>developer</title>
+	<meta name="Viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../../static/css/agent.css">
+	<link rel="stylesheet" href="../../static/css/top.css">
+</head>
+<body>
+	<ul class="top">
+		<li id="back"></li>
+		<li><b style="color: red">代理商</b></li>
+		<li></li>
+	</ul>
+	<div class="p">必填项</div>
+	<div class="container">
+		<div class="content">
+			<div class="add">
+				<div class="add-p">添加头像</div>
+			</div>
+			<div><input type="text" placeholder="公司名"></div>
+			<div><input type="text" placeholder="企业邮箱/公司总机"></div>
+			<div><input type="text" placeholder="联系人"></div>
+			<div><input type="text" placeholder="联系方式"></div>
+		</div>
+		<div class="p">选填项</div>
+
+		<div class="content2">
+			<div><input type="text" placeholder="微信号码"></div>
+			<ul>
+				<li>微信二维码</li>
+				<li>营业执照</li>
+				<li>楼宇产证</li>
+			</ul>
+		</div>
+		<div id="btn">完成</div>
+	</div>
+</body>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="../../static/js/back.js"></script>
+<script>
+$("#btn" ).click(function(){
+	window.location.href = "login.html";
+});
+</script>
+</html>

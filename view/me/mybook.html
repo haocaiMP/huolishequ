@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mybook</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+	<link rel="stylesheet" href="//cdn.bootcss.com/weui/1.0.2/style/weui.min.css">
+	<link rel="stylesheet" href="../../static/css/common.css">
+</head>
+<body>
+	<ul class="top">
+		<li id="back"></li>
+		<li><b>我预定的房源</b></li>
+		<li></li>
+	</ul>
+
+	<div class="list-box">
+		<ul class="flex-box2">
+			<li></li>
+			<li>
+				<ul>
+					<li>
+						<ul class="flex-box2-top">
+							<li><b>东方金融中心</b></li>
+							<li>待接单</li>
+						</ul>
+					</li>
+					<li>浦东-八佰伴</li>
+					<li>商务中心</li>
+					<li>
+						<ul class="flex-box2-bottom">
+							<li><span>&yen;7</span> <span>元/平米/天起</span></li>
+							<li>佣金：一个月</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<ul class="flex-box2">
+			<li></li>
+			<li>
+				<ul>
+					<li>
+						<ul class="flex-box2-top">
+							<li><b>东方金融中心</b></li>
+							<li>完成</li>
+						</ul>
+					</li>
+					<li>浦东-八佰伴</li>
+					<li>商务中心</li>
+					<li>
+						<ul class="flex-box2-bottom">
+							<li><span>&yen;7</span> <span>元/平米/天起</span></li>
+							<li></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$('#back' ).click(function(){
+	history.go(-1);
+})
+</script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>release</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+	<link rel="stylesheet" href="//cdn.bootcss.com/weui/1.0.2/style/weui.min.css">
+	<!--<link rel="stylesheet" href="../css/nav.css">-->
+	<style>
+		body{
+			background-color: rgba(8, 8, 8, 0.84);
+			overflow: hidden;
+		}
+		.foot{
+			position: absolute;
+			bottom:0;
+			left:0;
+			right:0;
+			height:50px;
+			background: url("../../static/img/publish_close_icon@2x.png") no-repeat center center;
+			background-color: rgba(24, 24, 24, 0.74);
+			background-size:28px;
+		}
+		.flex-box{
+			display: flex;
+			list-style: none;
+			position: absolute;
+			bottom:80px;
+			left:0;
+			right:0;
+		}
+		.flex-box li:first-child{
+			flex:1;
+			width: 100%;
+			height: 188px;
+			background: url("../../static/img/publish_btn02@2x.png") no-repeat center center;
+			background-size:94px;;
+		}
+		.flex-box li:last-child{
+			flex:1;
+			width: 100%;
+			height: 188px;
+			background: url("../../static/img/publish_btn01@2x.png") no-repeat center center;
+			background-size:94px;;
+		}
+		.flex-box li span{
+			color: #fff;
+			display: block;
+			/*position: absolute;*/
+			/*bottom:0;*/
+			text-align: center;
+			line-height: 320px;
+		}
+	</style>
+</head>
+<body>
+	<ul class="flex-box">
+		<li class="fb-needs"><span>发布需求</span></li>
+		<li class="fb-home"><span>发布房源</span></li>
+	</ul>
+	<div class="foot"></div>
+</body>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$('.foot' ).click(function(){
+	history.go(-1);
+});
+$('.fb-needs' ).click(function(){
+	location.href = 'releaseNeeds.html';
+});
+$('.fb-home' ).click(function(){
+	location.href = 'release-home.html';
+})
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>broker</title>
+	<meta name="Viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="../../static/css/broker.css">
+	<link rel="stylesheet" href="../../static/css/top.css">
+</head>
+<body>
+	<ul class="top">
+		<li id="back"></li>
+		<li><b style="color: red">经纪人</b></li>
+		<li></li>
+	</ul>
+	<div class="p">必填项</div>
+	<div class="container">
+		<div class="content">
+			<div class="add">
+				<div class="add-p">添加头像</div>
+			</div>
+			<div><input type="text" placeholder="姓名"></div>
+			<div><input type="text" placeholder="所属公司"></div>
+			<div><input type="text" placeholder="联系方式"></div>
+			<div><input type="text" placeholder="擅长商圈"></div>
+			<div class="card">名片正面</div>
+		</div>
+		<div class="p">选填项</div>
+
+		<div class="content2">
+			<div class="cate">全国经纪人证书</div>
+		</div>
+		<div id="btn">完成</div>
+	</div>
+</body>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="../../static/js/back.js"></script>
+<script>
+$("#btn" ).click(function(){
+	window.location.href = "login.html";
+});
+</script>
+</html>
