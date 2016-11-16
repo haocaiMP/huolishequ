@@ -7,7 +7,7 @@ const express = require('express');
 //var router = require('./routes/index');
 
 const app = express();
-app.use('/views', express.static(__dirname + '/views'));
+app.use('/view', express.static(__dirname + '/view'));
 app.use('/static', express.static(__dirname+'/static'));
 
 
