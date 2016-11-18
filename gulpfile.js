@@ -1,42 +1,102 @@
-/**
- * Created by Administrator on 2016/11/15.
- */
-var gulp = require('gulp');
-var htmlmin = require('gulp-htmlmin');
-var imagemin = require('gulp-imagemin');
-var minifycss = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
+var gulp = require('gulp'),
+    stylus = require('gulp-stylus'),
+    concat = require('gulp-concat'),
+    minifycss = require('gulp-minify-css'),
+    uglify = require('gulp-uglify'),
+    htmlmin = require('gulp-htmlmin'),
+    imagemin = require('gulp-imagemin'),
+    nodemon = require('nodemon'),
+    del = require('del');
+
+var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
+
+//编译stylus
+gulp.task('stylus', function(){
+  return gulp.src('./static/stylus/**/*.styl')
+  .pipe(stylus())
+  .pipe(gulp.dest('./static/css'));
+});
+
+
+//压缩css
+gulp.task('minifycss', ['stylus'], function(){
+  return gulp.src('./static/css/**/*.css')
+  .pipe(minifycss())
+  .pipe(gulp.dest('./dist/static/css'));
+});
+
+
+//压缩js
+gulp.task('uglify', function(){
+  return gulp.src('./static/js/**/*.js')
+  .pipe(uglify())
+  .pipe(gulp.dest('./dist/static/js'));
+});
+
 
 //压缩html
-gulp.task("htmlmin",function(){
-	gulp.src('./views/**/*.html')
-	.pipe(htmlmin())
-	.pipe(gulp.dest('./dist/view'));
+gulp.task('htmlmin', function(){
+  return gulp.src('./views/**/*.html')
+  .pipe(htmlmin())
+  .pipe(gulp.dest('./dist/views'))
 });
-//压缩js
-gulp.task("uglify",function(){
-	gulp.src('./static/js/**/*.js')
-		.pipe(uglify())
-		.pipe(gulp.dest('./dist/static/js'));
-});
-//压缩css
-gulp.task("minifycss",function(){
-	gulp.src('./static/css/**/*.css')
-		.pipe(minifycss())
-		.pipe(gulp.dest('./dist/static/css'));
-});
-//压缩图片
-gulp.task("imagemin",function(){
-	gulp.src('./static/img/**/*.{png,jpg,gif,ico,jpeg}')
-		.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-		.pipe(gulp.dest('./dist/static/img'));
+
+//压缩images
+gulp.task('imagemin', function(){
+  return gulp.src('./static/img/**/*{png,jpg,ico,gif}')
+  .pipe(imagemin())
+  .pipe(gulp.dest('./dist/static/img'));
 });
 
 
-gulp.task('watch',function(){
-	gulp.watch('./views/**/*.htm',['htmlmin']);
-	gulp.watch('./static/js/**/*.js',['uglify']);
-	gulp.watch('./static/css/**/*.css',['minifycss']);
-	gulp.watch('./static/img/**/*.{png,gif,jpg,ico}',['imagemin']);
+//启动服务器
+gulp.task('nodemon', (a)=> {
+  let ft = false;
+  return nodemon({
+    script: 'app.js'
+  }).on('start', ()=> {
+    if (!ft) {
+      a();
+      ft = true;
+    }
+  });
 });
-gulp.task('default',['htmlmin','uglify','minifycss','imagemin','watch']);
+
+
+//  proxy 服务器代理
+gulp.task('browser-sync',['nodemon'] , ()=> {
+  browserSync.init({
+    proxy: {
+      target: 'http://127.0.0.1:16085'
+    },
+    files: ['*'],
+    open: false,
+    notify: false,
+    port: 9800
+  });
+});
+
+//编译前清除文件
+gulp.task('clean', function(opt){
+  del(['./dist'], opt);
+});
+
+//构建项目
+gulp.task('build', ['stylus', 'minifycss', 'uglify', 'imagemin', 'htmlmin']);
+
+//监听文件变更
+gulp.task('watch', function(){
+  gulp.watch('./static/stylus/**/*.styl', ['stylus']);
+  gulp.watch([
+    './views/**/*.html',
+    './static/css/**/*.css',
+    './static/js/**/*.js',
+    './static/img/**/*.{png,jpg,ico,gif}}'
+  ]).on('change', reload);
+});
+
+//启动任务
+gulp.task('default', ['browser-sync', 'stylus', 'watch'], function(){
+  console.log("gulp default");
+});
