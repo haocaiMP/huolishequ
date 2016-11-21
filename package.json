@@ -1,7 +1,7 @@
 {
   "name": "projects",
   "version": "1.0.0",
-  "description": "",
+  "description": "* 下载\r   - `git clone http://github.com/haocaiMP/hulishequ.git`",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,5 +24,13 @@
     "gulp-stylus": "^2.6.0",
     "gulp-uglify": "^2.0.0",
     "nodemon": "^1.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haocaiMP/huolishequ.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haocaiMP/huolishequ/issues"
+  },
+  "homepage": "https://github.com/haocaiMP/huolishequ#readme"
 }
