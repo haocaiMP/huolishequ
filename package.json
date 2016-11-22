@@ -2,7 +2,7 @@
   "name": "projects",
   "version": "1.0.0",
   "description": "* 下载\r   - `git clone http://github.com/haocaiMP/hulishequ.git`",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
