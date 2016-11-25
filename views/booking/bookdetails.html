@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="../../static/css/details.css">
 	<style>
 		.boom{
-			position: absolute;
+			position: fixed;
 			bottom:0;
 			left:0;
 			right:0;
@@ -30,15 +30,23 @@
 		.boom li:last-child{
 			border:none;
 		}
+		.boss{
+			position: fixed;
+			top: 50px;
+			bottom:50px;
+			left:0;
+			right:0;
+			overflow-y: auto;
+		}
 	</style>
 </head>
 <body>
+	<ul class="top">
+		<li id="back"></li>
+		<li><b>订单详情</b></li>
+		<li></li>
+	</ul>
 	<div class="boss">
-		<ul class="top">
-			<li id="back"></li>
-			<li><b>订单详情</b></li>
-			<li></li>
-		</ul>
 		<div class="p">约见人</div>
 		<div class="person">
 			<ul class="p-flex">
@@ -97,7 +105,7 @@
 
 	<ul class="boom">
 		<li id="changetime"><b>改期</b></li>
-		<li><b>达成</b></li>
+		<li id="success"><b>达成</b></li>
 		<li id="nobook"><b>取消</b></li>
 	</ul>
 	<div class="all">
@@ -124,6 +132,9 @@ $('#changetime' ).click(function(){
 });
 $('#nobook ' ).click(function(){
 	window.location.href = "nobook.html";
+});
+$('#success' ).click(function(){
+	window.location.href = "upload.html";
 })
 
 </script>

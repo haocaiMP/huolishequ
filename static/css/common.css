@@ -49,15 +49,20 @@ ul li{
 	/*border: 1px solid #ccc;*/
 }
 .flex-box2>li>ul{
-	padding-left: 10px;
+	padding: 10px 0 0 10px;
+}
+.flex-box2>li>ul>li:nth-child(2){
+	font-size: 10pt;
 }
 .flex-box2>li>ul>li:nth-child(3){
 	width:70px;
-	height:20px;
-	line-height: 20px;
+	height:16px;
+	line-height: 16px;
 	text-align: center;
-	border:1px solid red;
+	border:1px solid orange;
 	border-radius: 5px;
+	color: orange;
+	font-size: 10pt;
 }
 
 .flex-box2-top li:first-child,.flex-box2-bottom li:first-child{
@@ -78,5 +83,6 @@ ul li{
 .flex-box2-bottom li:last-child{
 	font-size: 10pt;
 	line-height: 33px;
+	padding-right: 10px;
 }
 

@@ -56,8 +56,8 @@ body{
 	box-shadow:  0 0 3px 2px #dcdae0;
 }
 .li-top{
-	height:50px;
-	line-height: 50px;
+	height:40px;
+	line-height: 40px;
 	border-bottom: 1px solid #ccc;
 }
 .container-notice .li-top div:first-child,.container-news .li-top div:first-child,.container-needs .li-top div:first-child{
@@ -72,9 +72,9 @@ body{
 .container-needs .li-top div:last-child{
 	float: right;
 	width: 50px;
-	height:30px;
+	height:20px;
 	text-align: center;
-	line-height: 30px;
+	line-height: 20px;
 	border-radius: 5px;
 	margin: 10px 10px;
 }
@@ -98,6 +98,7 @@ body{
 }
 .li-p p:first-child{
 	text-indent:2em;
+	line-height: 20px;
 }
 .container-needs .li-p p:last-child{
 	height:30px;

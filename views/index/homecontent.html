@@ -133,7 +133,7 @@
 		.hm-ul{
 			display: flex;
 		}
-		.hm-ul>li{
+		.hm-ul>li:not(:last-child){
 			flex:1;
 			height:60px;
 			position: relative;
@@ -158,6 +158,11 @@
 		.hm-li-3,.hm-li-4{
 			line-height: 60px;
 			text-align: center;
+		}
+		.hm-li-4{
+			position: relative;
+			width: 60px;
+			font-size: 12px;
 		}
 		.hm-li-4:before{
 			content: '';
@@ -391,7 +396,7 @@ $('.hm-li-4' ).click(function(e){
 	window.event? window.event.cancelBubble = true : e.stopPropagation();
 });
 $('.flex-right' ).click(function(){
-	window.location.href = "../booking/nobook.html";
+	window.location.href = "../booking/bookdetails.html";
 });
 $('.flex-left' ).click(function(){
 	$('.all' ).hide();
