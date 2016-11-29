@@ -1,5 +1,6 @@
 let express = require('express')
 let path = require('path')
+let proxy = require('http-proxy-middleware');
 
 let app = express()
 
@@ -11,8 +12,21 @@ let app = express()
 app.use('/', express.static(__dirname + '/dist/views'))
 app.use('/static', express.static(__dirname + '/dist/static'))
 
+
+
+app.use('/', express.static(path.join(__dirname, '16085')));
+
+// interface proxy
+app.use('/api', proxy({
+  target: 'http://123.207.151.199:3000', // target host
+  changeOrigin: true,            // needed for virtual hosted sites
+  ws: true,                      // proxy websockets
+  cookieRewrite: true,
+  pathRewrite: {
+    '^/api/': '/'
+  }
+}));
 app.listen(16085, () => {
   console.log('server start at 16085')
 })
-
 module.exports = app

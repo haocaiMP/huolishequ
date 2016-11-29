@@ -45,7 +45,29 @@ $("#pwd" ).keyup(function(){
 	}
 });
 $('#btn' ).click(function(){
+	// var txt = $("#txt" ).val();
+	// var pwd = $('#pwd').val();
+	// $.ajax({
+	// 	url:'/api/admin/session',
+	// 	type:'post',
+	// 	dataType:'json',
+	// 	data:{
+	// 		'user[full_name]':txt,
+	// 		'user[password]':pwd
+	// 	},
+	// 	complete:function(result){
+	// 		console.log(result);
+	// 		if(result.status === 200){
+	// 			sessionStorage.name = 'success';
+	// 			window.location.href = '../me/loginsuccess.html';
+	// 		}else{
+	// 			console.log('error');
+	// 		}
+	// 	}
+	// })
+	sessionStorage.name = 'success';
 	window.location.href = '../me/loginsuccess.html';
+	
 })
 $('#txt' ).blur(function(){
 	var txt = $("#txt").val();
