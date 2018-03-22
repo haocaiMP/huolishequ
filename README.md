@@ -1,6 +1,6 @@
 # huolishequ
 * 下载
-  - `git clone http://github.com/haocaiMP/hulishequ.git`
+  - `git clone https://github.com/haocaiMP/hulishequ.git`
 
 * 进入
   - `cd huolishequ`
